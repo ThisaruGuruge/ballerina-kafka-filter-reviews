@@ -15,10 +15,5 @@ THIS 4 DIFFERENT COMPONENTS:
 * HANDLE ACCEPTED REVIEWS
 * HANDLE REJECTED REVIEWS
 
-```mermaid
-graph TD
-    PreProcessReviews --> FilterReviews
-    FilterReviews --> HandleAcceptedReviews
-    FilterReviews --> HandleRejectedReviews
-```
+![Flow Chart](images/FlowChart.png?raw=true "Review Filtering System")
 
