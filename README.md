@@ -16,8 +16,9 @@ THIS 4 DIFFERENT COMPONENTS:
 * HANDLE REJECTED REVIEWS
 
 ```mermaid
-PreProcessReviews --> FilterReviews;
-FilterReviews --> HandleAcceptedReviews;
-FilterReviews --> HandleRejectedReviews;
+graph TD
+    PreProcessReviews --> FilterReviews
+    FilterReviews --> HandleAcceptedReviews
+    FilterReviews --> HandleRejectedReviews
 ```
 
