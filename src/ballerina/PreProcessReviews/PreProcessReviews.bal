@@ -86,7 +86,7 @@ service getReviews on reviewsEP {
                         var sendResult = reviewProducer->send(messageToPublish, topic);
                         if (sendResult is error) {
                             io:print("[Preprocess]\t[ERROR]\tSending Received Review failed: ");
-                            io:println(sendResult);
+                            io:println(sendResult.detail().message);
                         } else {
                             io:println("[Preprocess]\t[INFO]\tSent Received Review");
                         }

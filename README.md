@@ -1,2 +1,4 @@
 # ballerina-kafka-filter-reviews
-Sample ballerina application to filter course reviews.
+
+This is a sample ballerina application to demonstrate how to use   `ballerina-kafka` module with `Apache Kafka` to develop a course review filtering system.
+

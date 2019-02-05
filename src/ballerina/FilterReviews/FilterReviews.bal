@@ -16,8 +16,6 @@ listener kafka:SimpleConsumer reviewConsumer = new(consumerConfigs);
 
 kafka:ProducerConfig producerConfigs = {
     bootstrapServers: "localhost:9092",
-    maxInFlightRequestsPerConnection: 1,
-    transactionalID: "transaction-consumer-1",
     clientID: "filter-review-producer",
     noRetries: 3
 };
@@ -73,12 +71,6 @@ service filterReviewService on reviewConsumer {
                         io:println(sendResult);
                     } else {
                         io:println("[Filter Reviews]\t[INFO]\tReview Published to: \"" + topicToPublish + "\"");
-
-                        io:println("[Filter Reviews]\t[INFO]\tCommitted offset for:");
-                        io:println("\t\t\tOffset: " + entry.offset);
-                        io:println("\t\t\tPartition: " + entry.partition);
-                        io:println("\t\t\tTopic: " + entry.topic);
-                        io:println("\t\t\tTimestamp: " + entry.timestamp);
                     }
                 }
             }

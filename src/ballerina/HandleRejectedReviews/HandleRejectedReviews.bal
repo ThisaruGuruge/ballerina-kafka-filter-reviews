@@ -15,6 +15,7 @@ listener kafka:SimpleConsumer rejectedReviewConsumer = new(rejectedReviewConsume
 service handleRejectedReviewsService on rejectedReviewConsumer {
     resource function onMessage(kafka:SimpleConsumer simpleConsumer, kafka:ConsumerRecord[] records) {
         foreach var entry in records {
+            io:println("Rejected Review Received");
             byte[] serializedMsg = entry.value;
             string msg = encoding:byteArrayToString(serializedMsg);
 

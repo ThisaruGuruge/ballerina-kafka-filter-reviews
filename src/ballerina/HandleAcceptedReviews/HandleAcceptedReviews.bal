@@ -15,6 +15,7 @@ listener kafka:SimpleConsumer acceptedReviewConsumer = new(acceptedReviewsConsum
 service handleAcceptedReviewsService on acceptedReviewConsumer {
     resource function onMessage(kafka:SimpleConsumer simpleConsumer, kafka:ConsumerRecord[] records) {
         foreach var entry in records {
+            io:println("Accepted Review Received");
             byte[] serializedMsg = entry.value;
             string msg = encoding:byteArrayToString(serializedMsg);
 
